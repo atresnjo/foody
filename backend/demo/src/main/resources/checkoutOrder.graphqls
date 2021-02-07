@@ -1,0 +1,12 @@
+type CheckoutOrder {
+    id: ID!
+    purchasedAt: LocalDateTime!
+    products: [Product]!
+    user: Account!
+    price: Int!
+}
+
+input CreateCheckoutOrderInput {
+    productIds: [Int]!
+}
+

@@ -1,0 +1,18 @@
+type Product {
+    id: ID!
+    title: String!
+    description: String!
+    reviews: [Review]
+    tags: [Tag]
+    imageUrl: String!
+    price: Float!
+    isTrending: Boolean!
+    productDates: [ProductDate]
+    totalRating: Int
+}
+
+type Query {
+    product(id: ID!): Product
+    findAllProducts: [Product]!
+    getProductsCount: Int!
+}

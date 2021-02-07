@@ -1,0 +1,16 @@
+type Account {
+    email: String!
+    password: String!
+    token: String!
+    orders: [CheckoutOrder]
+}
+
+type Mutation {
+    login(email: String!, password: String!): Account
+    createAccount(email: String!, password: String!): Account
+    createCheckoutOrder(orderInfo: CreateCheckoutOrderInput!): Boolean
+}
+
+extend type Query {
+    me: Account
+}

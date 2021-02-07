@@ -1,0 +1,18 @@
+type Review {
+    id: ID!
+    text: String!
+    product: Product!
+    rating: Int!
+    user: Account!
+    createdAt: LocalDateTime!
+}
+
+extend type Mutation {
+    createReview(input: CreateReviewInput!): Boolean!
+}
+
+input CreateReviewInput {
+    productId: Int!
+    text: String!
+    rating: Int!
+}
